@@ -7,7 +7,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     let appViewModel: AppViewModel = {
         return withDependencies {
-            $0.apiClient = ApiClient.live()
+            $0.apiClient = .live()
         } operation: {
             AppViewModel()
         }

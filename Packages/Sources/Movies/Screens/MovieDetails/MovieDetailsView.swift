@@ -1,14 +1,29 @@
 import SwiftUI
+import DataModels
 
 struct MovieDetailsView: View {
 
-    @StateObject var viewModel = MovieDetailsViewModel()
+    @ObservedObject var viewModel: MovieDetailsViewModel
+    
+    init(viewModel: MovieDetailsViewModel) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(viewModel.movie.plot)
+        }
+        .navigationTitle(viewModel.movie.title)
     }
 }
 
 #Preview {
-    MovieDetailsView()
+    NavigationStack {
+        MovieDetailsView(
+            viewModel:
+                MovieDetailsViewModel(
+                    movie: Movie(id: "1", title: "Movie 1", plot: "Plot 1", poster: nil, genres: [])
+                )
+        )
+    }
 }

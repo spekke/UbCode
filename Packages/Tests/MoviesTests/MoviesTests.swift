@@ -1,7 +1,7 @@
 import XCTest
-@testable import UbCode
+@testable import Movies
 
-final class UbCodeTests: XCTestCase {
+final class MoviesTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest

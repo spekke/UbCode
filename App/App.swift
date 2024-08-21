@@ -11,7 +11,9 @@ struct UbCodeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MoviesView(viewModel: viewModel.moviesViewModel)
+            NavigationStack {
+                MoviesView(viewModel: viewModel.moviesViewModel)
+            }
         }
     }
 }
