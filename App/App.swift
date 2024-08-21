@@ -1,17 +1,14 @@
-//
-//  UbCodeApp.swift
-//  UbCode
-//
-//  Created by Andre Stenvall on 2024-08-21.
-//
-
 import SwiftUI
+import Movies
 
 @main
 struct UbCodeApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MoviesView()
         }
     }
 }
