@@ -10,6 +10,7 @@
 		3F0E4FE42C76708200B4E881 /* Movies in Frameworks */ = {isa = PBXBuildFile; productRef = 3F0E4FE32C76708200B4E881 /* Movies */; };
 		3FCB6C6F2C7674DC006F7407 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB6C6E2C7674DC006F7407 /* AppViewModel.swift */; };
 		3FCB6C712C76756F006F7407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB6C702C76756F006F7407 /* AppDelegate.swift */; };
+		3FD909AF2C7677DB00FB3E75 /* Clients in Frameworks */ = {isa = PBXBuildFile; productRef = 3FD909AE2C7677DB00FB3E75 /* Clients */; };
 		3FDD20122C766AED00B42177 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FDD200C2C766AED00B42177 /* Preview Assets.xcassets */; };
 		3FDD20132C766AED00B42177 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FDD200E2C766AED00B42177 /* Assets.xcassets */; };
 		3FDD20152C766AED00B42177 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD20102C766AED00B42177 /* App.swift */; };
@@ -32,6 +33,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F0E4FE42C76708200B4E881 /* Movies in Frameworks */,
+				3FD909AF2C7677DB00FB3E75 /* Clients in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +112,7 @@
 			name = UbCode;
 			packageProductDependencies = (
 				3F0E4FE32C76708200B4E881 /* Movies */,
+				3FD909AE2C7677DB00FB3E75 /* Clients */,
 			);
 			productName = UbCode;
 			productReference = 3FC0B0022C76649B0071263B /* UbCode.app */;
@@ -380,6 +383,10 @@
 		3F0E4FE32C76708200B4E881 /* Movies */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Movies;
+		};
+		3FD909AE2C7677DB00FB3E75 /* Clients */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Clients;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

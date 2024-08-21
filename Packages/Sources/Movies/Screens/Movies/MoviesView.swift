@@ -2,9 +2,11 @@ import SwiftUI
 
 public struct MoviesView: View {
 
-    @StateObject var viewModel = MoviesViewModel()
+    @ObservedObject var viewModel: MoviesViewModel
 
-    public init() { }
+    public init(viewModel: MoviesViewModel) {
+        self.viewModel = viewModel
+    }
     
     public var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
@@ -12,5 +14,5 @@ public struct MoviesView: View {
 }
 
 #Preview {
-    MoviesView()
+    MoviesView(viewModel: MoviesViewModel())
 }

@@ -10,8 +10,16 @@ let package = Package(
     ],
     products: [
         .library(
+            name: "Clients",
+            targets: ["Clients"]
+        ),
+        .library(
             name: "Movies",
-            targets: ["Movies"]),
+            targets: ["Movies"]
+        ),
+    ],
+    dependencies: [
+      .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.0.0")
     ],
     targets: [
         
@@ -19,7 +27,9 @@ let package = Package(
         .target(
             name: "Clients",
             dependencies: [
-                "DataModels"
+                "DataModels",
+                .product(name: "Dependencies", package: "swift-dependencies"),
+                .product(name: "DependenciesMacros", package: "swift-dependencies"),
             ]
         ),
         

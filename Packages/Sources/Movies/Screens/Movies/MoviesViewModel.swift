@@ -1,6 +1,9 @@
 import Foundation
 
 @MainActor
-final class MoviesViewModel: ObservableObject {
+public final class MoviesViewModel: ObservableObject {
     
+    public init() {
+        
+    }
 }
