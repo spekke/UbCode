@@ -5,6 +5,7 @@ public struct Movie {
     public let title: String
     public let plot: String
     public let poster: URL?
+    public let genres: [Genre]
 }
 
 extension Movie: Codable { }
