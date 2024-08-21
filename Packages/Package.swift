@@ -14,10 +14,30 @@ let package = Package(
             targets: ["Movies"]),
     ],
     targets: [
+        
+        // MARK: Clients
         .target(
-            name: "Movies"),
+            name: "Clients",
+            dependencies: [
+                "DataModels"
+            ]
+        ),
+        
+        // MARK: DataModels
+        .target(
+            name: "DataModels"
+        ),
+        
+        // MARK: Movies
+        .target(
+            name: "Movies"
+        ),
         .testTarget(
             name: "MoviesTests",
-            dependencies: ["Movies"]),
+            dependencies: [
+                "Movies",
+                "DataModels"
+            ]
+        )
     ]
 )
