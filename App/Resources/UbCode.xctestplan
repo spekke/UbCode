@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "87E8980F-CE90-46DB-A16F-F4F59A33A269",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:UbCode.xcodeproj",
+      "identifier" : "3FC0B0012C76649B0071263B",
+      "name" : "UbCode"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Packages",
+        "identifier" : "MoviesTests",
+        "name" : "MoviesTests"
+      }
+    }
+  ],
+  "version" : 1
+}

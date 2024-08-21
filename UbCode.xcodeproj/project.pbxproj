@@ -16,6 +16,7 @@
 
 /* Begin PBXFileReference section */
 		3FC0B0022C76649B0071263B /* UbCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UbCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FCB6C6D2C767440006F7407 /* UbCode.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UbCode.xctestplan; sourceTree = "<group>"; };
 		3FDD200C2C766AED00B42177 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3FDD200E2C766AED00B42177 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FDD200F2C766AED00B42177 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				3FDD200D2C766AED00B42177 /* Preview Content */,
+				3FCB6C6D2C767440006F7407 /* UbCode.xctestplan */,
 				3FDD200E2C766AED00B42177 /* Assets.xcassets */,
 			);
 			path = Resources;
