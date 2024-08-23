@@ -3,7 +3,7 @@ import DataModels
 import Dependencies
 import XCTest
 import Combine
-@testable import Movies
+@testable import MoviesFeature
 
 
 final class MoviesViewModelTests: XCTestCase {
@@ -18,8 +18,8 @@ final class MoviesViewModelTests: XCTestCase {
     func testFetchData_noCachedMovies() async throws {
         
         let fetchableMovies: [Movie] = [
-            Movie(id: "1", title: "Movie 1", plot: "Plot 1", poster: nil, genres: []),
-            Movie(id: "2", title: "Movie 2", plot: "Plot 2", poster: nil, genres: []),
+            Movie(id: 1, title: "Movie 1", plot: "Plot 1", poster: nil, genre: []),
+            Movie(id: 2, title: "Movie 2", plot: "Plot 2", poster: nil, genre: []),
         ]
         
         let sut = withDependencies {
@@ -45,15 +45,15 @@ final class MoviesViewModelTests: XCTestCase {
     func testFetchData_cachedMovies() async throws {
         
         let cachedMovies: [Movie] = [
-            Movie(id: "1", title: "Movie 1", plot: "Plot 1", poster: nil, genres: []),
-            Movie(id: "2", title: "Movie 2", plot: "Plot 2", poster: nil, genres: []),
+            Movie(id: 1, title: "Movie 1", plot: "Plot 1", poster: nil, genre: []),
+            Movie(id: 2, title: "Movie 2", plot: "Plot 2", poster: nil, genre: []),
         ]
         
         let fetchableMovies: [Movie] = [
-            Movie(id: "1", title: "Movie 1", plot: "Plot 1", poster: nil, genres: []),
-            Movie(id: "2", title: "Movie 2", plot: "Plot 2", poster: nil, genres: []),
-            Movie(id: "3", title: "Movie 3", plot: "Plot 3", poster: nil, genres: []),
-            Movie(id: "4", title: "Movie 4", plot: "Plot 4", poster: nil, genres: [])
+            Movie(id: 1, title: "Movie 1", plot: "Plot 1", poster: nil, genre: []),
+            Movie(id: 2, title: "Movie 2", plot: "Plot 2", poster: nil, genre: []),
+            Movie(id: 3, title: "Movie 3", plot: "Plot 3", poster: nil, genre: []),
+            Movie(id: 4, title: "Movie 4", plot: "Plot 4", poster: nil, genre: [])
         ]
         
         let sut = withDependencies {
@@ -74,5 +74,9 @@ final class MoviesViewModelTests: XCTestCase {
         XCTAssertEqual(publishedMovies[0], [])
         XCTAssertEqual(publishedMovies[1], cachedMovies)
         XCTAssertEqual(publishedMovies[2], fetchableMovies)
+        
+        await sut.fetchData()
+        
+        XCTAssertEqual(publishedMovies[3], fetchableMovies)
     }
 }

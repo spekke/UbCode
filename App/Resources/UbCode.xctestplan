@@ -19,8 +19,8 @@
     {
       "target" : {
         "containerPath" : "container:Packages",
-        "identifier" : "MoviesTests",
-        "name" : "MoviesTests"
+        "identifier" : "MoviesFeatureTests",
+        "name" : "MoviesFeatureTests"
       }
     }
   ],
