@@ -1,5 +1,5 @@
 import Foundation
-import Movies
+import MoviesFeature
 
 @MainActor
 final class AppViewModel: ObservableObject {

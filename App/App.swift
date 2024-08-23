@@ -1,4 +1,4 @@
-import Movies
+import MoviesFeature
 import SwiftUI
 import Dependencies
 

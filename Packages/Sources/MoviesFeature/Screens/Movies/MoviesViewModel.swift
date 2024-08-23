@@ -7,22 +7,37 @@ import Foundation
 public final class MoviesViewModel: ObservableObject {
     
     @Dependency(\.apiClient) var apiClient
+    @Dependency(\.cacheClient) var cacheClient
     
-    @Published
-    var movies: [Movie] = []
+    @Published var isLoading = false
+    @Published var error: Error?
+    @Published var movies: [Movie] = []
+    @Published var firstLoad = true
     
     public init() {
         
     }
     
     func fetchData() async {
-        print(#function)
+        defer {
+            self.isLoading = false
+        }
+        self.isLoading = true
+        
         do {
+            if firstLoad, let cachedMovies = await cacheClient.cachedMovies() {
+                self.movies = cachedMovies
+                self.firstLoad = false
+                await Task.yield()
+            }
+            
             let movies = try await apiClient.fetchMovies()
             self.movies = movies
+            await self.cacheClient.storeMovies(movies: movies)
         }
         catch {
             print("error", error)
+            self.error = error
         }
     }
     

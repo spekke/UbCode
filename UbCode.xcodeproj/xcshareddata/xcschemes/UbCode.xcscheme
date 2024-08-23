@@ -30,7 +30,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:App/UbCode.xctestplan"
+            reference = "container:App/Resources/UbCode.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>

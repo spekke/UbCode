@@ -14,8 +14,8 @@ let package = Package(
             targets: ["Clients"]
         ),
         .library(
-            name: "Movies",
-            targets: ["Movies"]
+            name: "MoviesFeature",
+            targets: ["MoviesFeature"]
         ),
     ],
     dependencies: [
@@ -40,16 +40,16 @@ let package = Package(
         
         // MARK: Movies
         .target(
-            name: "Movies",
+            name: "MoviesFeature",
             dependencies: [
                 "Clients",
                 "DataModels"
             ]
         ),
         .testTarget(
-            name: "MoviesTests",
+            name: "MoviesFeatureTests",
             dependencies: [
-                "Movies"
+                "MoviesFeature"
             ]
         )
     ]

@@ -1,18 +1,18 @@
 import Foundation
 
 public struct Movie {
-    public let id: String
+    public let id: Int
     public let title: String
     public let plot: String
     public let poster: URL?
-    public let genres: [Genre]
+    public let genre: [Genre]?
     
-    public init(id: String, title: String, plot: String, poster: URL?, genres: [Genre]) {
+    public init(id: Int, title: String, plot: String, poster: URL?, genre: [Genre]?) {
         self.id = id
         self.title = title
         self.plot = plot
         self.poster = poster
-        self.genres = genres
+        self.genre = genre
     }
 }
 
