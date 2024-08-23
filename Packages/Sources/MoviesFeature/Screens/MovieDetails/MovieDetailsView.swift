@@ -30,6 +30,7 @@ struct MovieDetailsView: View {
                     }
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
         }
         .navigationBarTitleDisplayMode(.inline)

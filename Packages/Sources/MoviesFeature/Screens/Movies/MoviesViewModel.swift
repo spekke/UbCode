@@ -26,15 +26,16 @@ public final class MoviesViewModel: ObservableObject {
         
         do {
             if firstLoad, let cachedMovies = await cacheClient.cachedMovies() {
+                print(#fileID, #function, "Populating from cache")
                 self.movies = cachedMovies
                 self.firstLoad = false
-                await Task.yield()
             }
             
             let movies = try await apiClient.fetchMovies()
             self.movies = movies
             await self.cacheClient.storeMovies(movies: movies)
         }
+        catch is CancellationError { }
         catch {
             print("error", error)
             self.error = error

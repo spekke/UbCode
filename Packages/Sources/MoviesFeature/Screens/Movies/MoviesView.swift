@@ -43,6 +43,7 @@ import Dependencies
     NavigationStack {
         MoviesView(
             viewModel: withDependencies {
+                $0.cacheClient = CacheClient.inMemory()
                 $0.apiClient.fetchMovies = {
                     try await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
                     return [
