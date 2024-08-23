@@ -4,8 +4,8 @@ import Dependencies
 import DependenciesMacros
 
 @DependencyClient
-public struct ApiClient {
-    public var fetchMovies: () async throws -> [Movie]
+public struct ApiClient: Sendable {
+    public var fetchMovies: @Sendable () async throws -> [Movie]
 }
 
 extension ApiClient: TestDependencyKey {

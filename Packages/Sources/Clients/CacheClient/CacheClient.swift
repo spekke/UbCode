@@ -4,9 +4,9 @@ import Dependencies
 import DependenciesMacros
 
 @DependencyClient
-public struct CacheClient {
-    public var cachedMovies: () async -> [Movie]?
-    public var storeMovies: (_ movies: [Movie]) async -> Void
+public struct CacheClient: Sendable {
+    public var cachedMovies: @Sendable () async -> [Movie]?
+    public var storeMovies: @Sendable (_ movies: [Movie]) async -> Void
 }
 
 extension CacheClient: TestDependencyKey {

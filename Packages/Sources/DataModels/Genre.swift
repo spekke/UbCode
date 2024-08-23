@@ -1,6 +1,6 @@
 import Foundation
 
-public enum Genre: String {
+public enum Genre: String, Sendable {
     case action = "Action"
     case adventure = "Adventure"
     case animation = "Animation"

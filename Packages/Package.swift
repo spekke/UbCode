@@ -1,4 +1,4 @@
-// swift-tools-version: 5.9
+// swift-tools-version: 5.10
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -30,12 +30,18 @@ let package = Package(
                 "DataModels",
                 .product(name: "Dependencies", package: "swift-dependencies"),
                 .product(name: "DependenciesMacros", package: "swift-dependencies"),
+            ],
+            swiftSettings: [
+              .enableExperimentalFeature("StrictConcurrency")
             ]
         ),
         
         // MARK: DataModels
         .target(
-            name: "DataModels"
+            name: "DataModels",
+            swiftSettings: [
+              .enableExperimentalFeature("StrictConcurrency")
+            ]
         ),
         
         // MARK: Movies
@@ -50,6 +56,9 @@ let package = Package(
             name: "MoviesFeatureTests",
             dependencies: [
                 "MoviesFeature"
+            ],
+            swiftSettings: [
+              .enableExperimentalFeature("StrictConcurrency")
             ]
         )
     ]

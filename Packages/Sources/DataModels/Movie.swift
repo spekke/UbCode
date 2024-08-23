@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Movie {
+public struct Movie: Sendable {
     public let id: Int
     public let title: String
     public let plot: String
