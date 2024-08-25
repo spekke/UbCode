@@ -12,23 +12,20 @@ public final class MoviesViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var error: Error?
     @Published var movies: [Movie] = []
-    @Published var firstLoad = true
     
-    public init() {
-        
-    }
+    public init() { }
     
     func fetchData() async {
         defer {
             self.isLoading = false
         }
+        self.error = nil
         self.isLoading = true
         
         do {
-            if firstLoad, let cachedMovies = await cacheClient.cachedMovies() {
+            if self.movies.isEmpty, let cachedMovies = await cacheClient.cachedMovies() {
                 print(#fileID, #function, "Populating from cache")
                 self.movies = cachedMovies
-                self.firstLoad = false
             }
             
             let movies = try await apiClient.fetchMovies()

@@ -5,7 +5,7 @@ public extension ApiClient {
     static func live() -> Self {
         Self.init(
             fetchMovies: {
-                try await Task.sleep(nanoseconds: 2 * NSEC_PER_SEC)
+                try await Task.sleep(nanoseconds: 2 * NSEC_PER_SEC) // Add some delay to request
                 let url = URL(string: "https://freetestapi.com/api/v1/movies")!
                 let (data, _) = try await URLSession.shared.data(from: url)
                 let movies = try JSONDecoder().decode([Movie].self, from: data)

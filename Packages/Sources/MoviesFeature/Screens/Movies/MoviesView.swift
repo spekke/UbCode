@@ -1,5 +1,5 @@
 import SwiftUI
-
+import DataModels
 
 public struct MoviesView: View {
 
@@ -20,7 +20,18 @@ public struct MoviesView: View {
                 ProgressView()
             }
             else if viewModel.error != nil {
-                ContentUnavailableView("Something went wrong", systemImage: "exclamationmark.circle")
+                ContentUnavailableView(
+                    label: {
+                        Label("Something went wrong", systemImage: "exclamationmark.circle")
+                    },
+                    actions: {
+                        Button(
+                            action: { Task { await viewModel.fetchData() } },
+                            label: { Text("Retry") }
+                        )
+                        .padding()
+                    }
+                )
             }
         }
         .task {
@@ -38,8 +49,9 @@ public struct MoviesView: View {
 import Clients
 import DataModels
 import Dependencies
+import ConcurrencyExtras
 
-#Preview("Data - No cached") {
+#Preview("Data - Cache empty") {
     NavigationStack {
         MoviesView(
             viewModel: withDependencies {
